@@ -25,14 +25,14 @@ From the above output we can see that ports, **21**, **52**, **139**, and **445*
 Since ftp is open, we could check if anonymous ftp is allowed.
 
 ![FTP](./Lame/ftp.png)
-\ **Figure 1:** FTP Anonymous Login Possible
+**Figure 1:** FTP Anonymous Login Possible
 
 Anonymous login is possible but directory is not listed.
 
 Next, checking if Samba version running on port 139 is vulnerable.
 
 ![Samba](./Lame/Screenshot_2.png)
-\ **Figure 2:** Samba version vulnerable to command execution.
+**Figure 2:** Samba version vulnerable to command execution.
 
 
 # Exploitation  
@@ -40,17 +40,17 @@ Next, checking if Samba version running on port 139 is vulnerable.
 Google reveals that there's a metasploit module for the vulnerability. Going ahead and starting msfconsole and searching for samba.
 
 ![Metasploit](./Lame/metasploit.png)
-\ **Figure 3:** Samba usermap_script command exec.
+**Figure 3:** Samba usermap_script command exec.
 
 We're usermap_script command exec module. Going further and inputting RHOST value of our machine 10.10.10.3.
 
 ![Options](./Lame/optionsmsf.png)
-\ **Figure 4:** Msfconsole.
+**Figure 4:** Msfconsole.
 
 We run the module after providing RHOSTS value to the IP of machine, and we got a session open.
 
 ![Session](./Lame/shell.png)
-\ **Figure 5:** Opened Session.
+**Figure 5:** Opened Session.
 
 ## User Flag
 
