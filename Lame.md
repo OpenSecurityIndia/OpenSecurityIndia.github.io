@@ -2,7 +2,7 @@
 # Information Gathering
 
 ## Nmap
-We begin our reconnaissance by running an Nmap scan checking default scripts and testing for vulnerabilities.
+Running an Nmap scan.
 
 ```console
 root@kali:~$ nmap -sV 10.10.10.3
@@ -42,7 +42,7 @@ Google reveals that there's a metasploit module for the vulnerability. Going ahe
 ![Metasploit](./Lame/metasploit.png)
 **Figure 3:** Samba usermap_script command exec.
 
-We're usermap_script command exec module. Going further and inputting RHOST value of our machine 10.10.10.3.
+We're using usermap_script command exec module. Going further and inputting RHOST value of our machine 10.10.10.3.
 
 ![Options](./Lame/optionsmsf.png)
 **Figure 4:** Msfconsole.
