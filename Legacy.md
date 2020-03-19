@@ -2,7 +2,7 @@
 # Information Gathering
 
 ## Nmap
-We begin our reconnaissance by running an Nmap scan checking default scripts and testing for vulnerabilities.
+Running an Nmap scan.
 
 ```console
 root@kali:~# nmap 10.10.10.4
@@ -18,7 +18,7 @@ PORT     STATE  SERVICE
 ```
 From the above output we can see that ports, **139** and **445** are open.
 
-Since 445 is open let's try to check if it's vulnerable to Eternalblue
+Since 445 is open let's try to check if it's vulnerable to Eternalblue.
 
 ```console
 msf5 > search eternalblue
@@ -47,7 +47,7 @@ msf5 auxiliary(scanner/smb/smb_ms17_010) > run
 [*] Auxiliary module execution completed
 ```
 
-Here we see it is likely vulnerable to eternal blue. Let's try exploiting it.
+Here we see it is likely vulnerable to eternal blue. This module exploits the vulnerability found in Server Message Block V1 running on port 445. SMB mishandles the crafted packets sent by the attacker, thus allowing Remote Code Execution, let's try exploiting it.
 
 [//]:![FTP](./Lame/ftp.png)
 [//]:# ( **Figure 1:** FTP Anonymous Login Possible)
@@ -111,7 +111,7 @@ Let's run the module now.
 ```
 Exploit failed.
 
-We try `exploit/windows/smb/ms17_010_psexec` EternalRomance SMB Vuln.
+We try `exploit/windows/smb/ms17_010_psexec` EternalRomance SMB Vuln. This vulnerability is more reliable than the Eternalblue(EternalBlue in 90% cases causes BSOD), this vulnerability exploits a bug in 'named pipes'.
 Use the module, set rhosts to the IP of the box and run.
 
 ```console
