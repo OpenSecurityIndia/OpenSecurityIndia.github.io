@@ -25,6 +25,7 @@ From the above output we can see that ports, **21**, **52**, **139**, and **445*
 Since ftp is open, we could check if anonymous ftp is allowed.
 
 ![FTP](./Lame/ftp.png)
+
 **Figure 1:** FTP Anonymous Login Possible
 
 Anonymous login is possible but directory is not listed.
