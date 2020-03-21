@@ -47,7 +47,7 @@ msf5 auxiliary(scanner/smb/smb_ms17_010) > run
 [*] Auxiliary module execution completed
 ```
 
-Here we see it is likely vulnerable to eternal blue. This module exploits the vulnerability found in Server Message Block V1 running on port 445. SMB mishandles the crafted packets sent by the attacker, thus allowing Remote Code Execution, let's try exploiting it.
+Here we see it is likely vulnerable to eternal blue. This module exploits the vulnerability found in Server Message Block V1 running on port 445. This version of unpatched SMB mishandles the crafted packets sent by the attacker, thus allowing Remote Code Execution, let's try exploiting it.
 
 [//]:![FTP](./Lame/ftp.png)
 [//]:# ( **Figure 1:** FTP Anonymous Login Possible)
@@ -109,7 +109,7 @@ Let's run the module now.
 [-] 10.10.10.4:445 - =-=-=-=-=-=-=-=-=-=-=-=-=-=FAIL-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 [-] 10.10.10.4:445 - =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ```
-Exploit failed.
+Exploit failed. This could be because of the fact that Eternalblue exploit could be unstable sometimes.
 
 We try `exploit/windows/smb/ms17_010_psexec` EternalRomance SMB Vuln. This vulnerability is more reliable than the Eternalblue(EternalBlue in 90% cases causes BSOD), this vulnerability exploits a bug in 'named pipes'.
 Use the module, set rhosts to the IP of the box and run.
@@ -159,5 +159,5 @@ root@kali:~$ cat root.txt
 ```
 
 # Conclusion
-Overall the box was pretty easy as the exploits were straight forward and there was no need for a privesc. Both root and user could be owned in a single exploit.
+Overall the box was pretty easy as the exploits were straight forward and there was no need for a privesc because of the fact that EternalRomance is a kernel level exploit and we would be owning the root from the successfull exploit.
 
