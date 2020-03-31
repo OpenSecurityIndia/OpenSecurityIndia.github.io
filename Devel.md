@@ -83,7 +83,7 @@ Open the ip on the browser and navigate to the payload we delivered on the serve
 
 Shell is a low privilged one, now for privesc.
 
-#Privilege Escalation
+# Privilege Escalation
 
 ![Sysinfo](./Devel/Screenshot_20.png)
 {**Figure 7:** Here we see that the machine is running windows 7 build 7600)
