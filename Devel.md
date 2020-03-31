@@ -124,19 +124,11 @@ nt authority\system
 
 ## User Flag
 
-In order to get the user flag, we change the directory to the user Desktop 'babis' and we simply need to use `cat` to read the contents of user.txt
-```
-root@kali:~$ cat user.txt
-
-```
+In order to get the user flag, we change the directory to the user Desktop 'babis' and find 'user.txt'
 
 ## Root Flag
 
-There's no need to privesc this box as we could easily change directory to the Administrator Desktop folder and `cat` the root.txt
-```
-root@kali:~$ cat root.txt
-
-```
+Change directory to the Administrator Desktop folder and find 'root.txt'
 
 # Conclusion
 This box could also be solved using msfconsole, catch the shell using meterpreter with the apsx payload, once the shell is acquired background it and run local_exploit_suggester on the session and run the exploit which the module suggests. This would give you the privileged shell.
