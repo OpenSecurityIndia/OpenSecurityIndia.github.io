@@ -43,14 +43,14 @@ ftp> passiv
 ```
 Here it is seen that ftp allows anonymous login. Let's go ahead and check if ftp allows the 'PUT' command.
 
-[FTP](./Devel/Screenshot_3.png)
+![FTP](./Devel/Screenshot_3.png)
 {**Figure 1:** Server runs on asp.net)
 
 Idea is to craft a aspx payload and to deliver to the box using ftp PUT command.
 
 We craft payload using msfvenom
 
-[Msfvenom](./Devel/Screenshot_8.png)
+![Msfvenom](./Devel/Screenshot_8.png)
 (**Figure 2:** Msfvenom)
 
 Delivering the payload
@@ -65,33 +65,33 @@ local: shell.asp remote: shell.asp
 
 Listening to netcat on port 4444 to catch the shell.
 
-[Netcat](./Devel/Screenshot_4.png)
+![Netcat](./Devel/Screenshot_4.png)
 {**Figure 3:** Netcat listener)
 
 # Exploitation  
 
 Open the ip on the browser and navigate to the payload we delivered on the server.
 
-[Payload](./Devel/Screenshot_5.png)
+![Payload](./Devel/Screenshot_5.png)
 {**Figure 4:** Payload)
 
-[Shell](./Devel/Screenshot_6.png)
-{**Figure 4:** We got a reverse shell!)
+![Shell](./Devel/Screenshot_6.png)
+{**Figure 5:** We got a reverse shell!)
 
-[Low Shell](./Devel/Screenshot_7.png)
-{**Figure 4:** Shell is a low privileged one)
+![Low Shell](./Devel/Screenshot_7.png)
+{**Figure 6:** Shell is a low privileged one)
 
 Shell is a low privilged one, now for privesc.
 
 #Privilege Escalation
 
-[Sysinfo](./Devel/Screenshot_20.png)
-{**Figure 4:** Here we see that the machine is running windows 7 build 7600)
+![Sysinfo](./Devel/Screenshot_20.png)
+{**Figure 7:** Here we see that the machine is running windows 7 build 7600)
 
 Searching google for local prives for windows 7 reveals privesc payload. Next we download that and deliver it to the machine.
 
-[Google](./Devel/Screenshot_19.png)
-{**Figure 4:** Local Privesc)
+![Google](./Devel/Screenshot_19.png)
+{**Figure 8:** Local Privesc)
 
 We need to compile the file, all the instructions are in the payload file itself.
 
