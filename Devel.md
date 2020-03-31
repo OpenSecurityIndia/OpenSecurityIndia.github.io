@@ -139,5 +139,5 @@ root@kali:~$ cat root.txt
 ```
 
 # Conclusion
-This box could also be solved using msfconsole, catch the shell using meterpreter with the apsx payload, once the shell is acquired background it and run local_exploit_suggester on the session and run the exploit which the 
+This box could also be solved using msfconsole, catch the shell using meterpreter with the apsx payload, once the shell is acquired background it and run local_exploit_suggester on the session and run the exploit which the module suggests. This would give you the privileged shell.
 
