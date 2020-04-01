@@ -54,29 +54,34 @@ We try to login with some guessable passwords, 'admin', 'admin123' etc with user
 It can be seen that after a few tries we get locked out and also there's this 'session_login.cgi' happening on the url. This is interesting and could be vulnerable to shell shock. Let's try to check if it really is vulnerable to shellshock.
  
 ![session_login](./Beep/Screenshot_2.png)
-{**Figure 3:** Session_login.cgi)
+
+{**Figure 2:** Session_login.cgi)
 
 # Exploitation  
 
 Forward the traffic to burp suite proxy, forward the response to repeater.
 
 ![Repeater](./Beep/Screenshot_3.png)
-{**Figure 4:** Repeater)
+
+{**Figure 3:** Repeater)
 
 Input the shellshock bash reverse shell code to the User-Agent field.
 
 ![Shellshock](./Beep/Screenshot_4.png)
+
 {**Figure 4:**)
  
 Listen on the port '1234' using netcat to catch the reverse shell.
 
 ![Netcat](./Beep/Screenshot_5.png)
-{**Figure 4:** Netcat listener)
+
+{**Figure 5:** Netcat listener)
 
 Send the request with our crafted code to the machine, we get a reverseshell on netcat.
 
 ![Shell](./Beep/Screenshot_6.png)
-{**Figure 4:** Shell)
+
+{**Figure 6:** Shell)
 
 This is a root shell.
 
