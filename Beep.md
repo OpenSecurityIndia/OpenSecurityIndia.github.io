@@ -47,7 +47,7 @@ PORT      STATE         SERVICE
 Here there's something about port **10000**. Let's try to visit the page
 
 ![Port 10000](./Beep/Screenshot_1.png)
-{**Figure 1:** Port 10000)
+(**Figure 1:** Port 10000)
  
 We try to login with some guessable passwords, 'admin', 'admin123' etc with username as admin.
  
@@ -55,7 +55,7 @@ It can be seen that after a few tries we get locked out and also there's this 's
  
 ![session_login](./Beep/Screenshot_2.png)
 
-{**Figure 2:** Session_login.cgi)
+(**Figure 2:** Session_login.cgi)
 
 # Exploitation  
 
@@ -63,25 +63,25 @@ Forward the traffic to burp suite proxy, forward the response to repeater.
 
 ![Repeater](./Beep/Screenshot_3.png)
 
-{**Figure 3:** Repeater)
+(**Figure 3:** Repeater)
 
 Input the shellshock bash reverse shell code to the User-Agent field.
 
 ![Shellshock](./Beep/Screenshot_4.png)
 
-{**Figure 4:**)
+(**Figure 4:**)
  
 Listen on the port '1234' using netcat to catch the reverse shell.
 
 ![Netcat](./Beep/Screenshot_5.png)
 
-{**Figure 5:** Netcat listener)
+(**Figure 5:** Netcat listener)
 
 Send the request with our crafted code to the machine, we get a reverseshell on netcat.
 
 ![Shell](./Beep/Screenshot_6.png)
 
-{**Figure 6:** Shell)
+(**Figure 6:** Shell)
 
 This is a root shell.
 
